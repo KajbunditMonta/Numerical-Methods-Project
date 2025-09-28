@@ -2,7 +2,7 @@
 
 function Graphical() {
     return(
-        <h1>Graphical</h1>
+        <h1>Graphical methods</h1>
     );
 }
 

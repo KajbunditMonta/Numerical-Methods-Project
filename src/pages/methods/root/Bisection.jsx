@@ -2,7 +2,7 @@
 
 function Bisection() {
     return(
-        <h1>Bisection</h1>
+        <h1>Bisection search</h1>
     );
 }
 

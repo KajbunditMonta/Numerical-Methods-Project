@@ -15,26 +15,48 @@ function Home() {
             setSolutions([
                 {label : "Graphical methods", path : "/pages/methods/root/Grapical"},
                 {label : "Bisection search", path : "/pages/methods/root/Bisection"},
-                {label : "False-position methods", path : ""},
-                {label : "One-position methods", path : ""},
-                {label : "Newton-Raphson Method", path : ""},
-                {label : "Secant methods", path : ""}
+                {label : "False-position methods", path : "/pages/methods/root/False"},
+                {label : "One-position methods", path : "/pages/methods/root/One"},
+                {label : "Newton-Raphson Method", path : "/pages/methods/root/NewtonRaphson"},
+                {label : "Secant methods", path : "/pages/methods/root/Secant"}
             ]);
         }
         else if (selected === "linear") {
-            setSolutions(["Cramer's Rule", "Gauss Elimination", "Gauss-Jordan Elimination", "Matrix Inversion", "LU Decomposition Methods", "Jacobi Iteration", "Conjugate Gradient Methods"]);
+            setSolutions([
+                {label : "Cramer's Rule", path : "/pages/methods/linear/Cramer"}, 
+                {label : "Gauss Elimination", path : "/pages/methods/linear/Gauss"}, 
+                {label : "Gauss-Jordan Elimination", path : "/pages/methods/linear/GaussJordan"}, 
+                {label : "Matrix Inversion", path : "/pages/methods/linear/Matrix"},
+                {label : "LU Decomposition Methods", path : "/pages/methods/linear/LU"}, 
+                {label : "Jacobi Iteration", path : "/pages/methods/linear/Jacobi"}, 
+                {label : "Conjugate Gradient Methods", path : "/pages/methods/linear/Conjugate"}
+            ]);
         }
         else if (selected === "inter") {
-            setSolutions(["Newton divided-differences", "Lagrange interpolation", "Spline interpolation"]);
+            setSolutions([
+                {label : "Newton divided-differences", path : "/pages/methods/iter/NewtonDivided"},
+                {label : "Lagrange interpolation", path : "/pages/methods/iter/Lagrange"}, 
+                {label : "Spline interpolation", path : "/pages/methods/iter/Spline"}
+            ]);
         }
         else if (selected === "extra") {
-            setSolutions(["Simple Regression", "Multiple Regression"]);
+            setSolutions([
+                {label : "Simple Regression", path : "/pages/methods/extra/Simple"}, 
+                {label : "Multiple Regression", path : "/pages/methods/extra/Multiple"}
+            ]);
         }
         else if (selected === "integrat") {
-            setSolutions(["Trapezoidal Rule", "Composite Trapezoidal Rule", "Simpson Rule", "Composite Simpson Rule"]);
+            setSolutions([
+                {label : "Trapezoidal Rule", path : "/pages/methods/integrat/Trapezoidal"}, 
+                {label : "Composite Trapezoidal Rule", path : "/pages/methods/integrat/CompositeTrapezoidal"},
+                {label : "Simpson Rule", path : "/pages/methods/integrat/Simpson"},
+                {label : "Composite Simpson Rule", path : "/pages/methods/integrat/CompositeSimpson"}
+            ]);
         }
         else if (selected === "diff") {
-            setSolutions(["Numerical Differentiation"]);
+            setSolutions([
+                {label : "Numerical Differentiation", path : "/pages/methods/diff/Diff"}
+            ]);
         }
 
     }
