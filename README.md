@@ -1,3 +1,3 @@
-# Numerical methods Project
+# Numerical project
 
 This project is for Numerical methods subject
