@@ -67,7 +67,7 @@ function Home() {
     }
 
     return(
-        <>
+        <div className="Home-item">
             <h1>Numerical methods Project</h1>
 
             <label className="label">Problem : </label>
@@ -87,7 +87,7 @@ function Home() {
                 {solution.map((sol, idx) => (<option key={idx} value={sol.path}>{sol.label}</option>) )}
             </select>
 
-        </>
+        </div>
     )
 }
 

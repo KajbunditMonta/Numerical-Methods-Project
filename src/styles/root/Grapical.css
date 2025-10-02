@@ -1,0 +1,50 @@
+.Gbody {
+    text-align: center;
+}
+
+.Gh1 {
+    font-size: 50px;
+}
+
+.fbox {
+    height: 60px;
+    width: 300px;
+    font-size: 40px;
+    text-align: center;
+}
+
+.labelf {
+    font-size: 50px;
+}
+
+.xbox {
+    height: 30px;
+    width: 60px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.pbox {
+    height: 30px;
+    width: 110px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.calBotton {
+    height: 60px;
+    width: 100px;
+    font-size: 20px;
+}
+
+.Gtable {
+    display: flex;
+    justify-content: center;
+}
+
+.inGtable, th, td {
+    border: 1px solid;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+}

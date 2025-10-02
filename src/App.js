@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './styles/App.css';
 
+import Navbar from './pages/components/Navbar';
+
 import Home from './pages/Home';
 
 import Graphical from './pages/methods/root/Grapical';
@@ -36,6 +38,7 @@ import Diff from './pages/methods/diff/Diff'
 function App() {
   return (
     <Router>
+      <Navbar />
       <Routes>
 
         <Route path = "/" element = {<Home />} />
