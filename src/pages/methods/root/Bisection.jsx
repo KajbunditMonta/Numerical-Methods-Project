@@ -2,6 +2,7 @@ import '../../../styles/root/Bisection.css'
 import BisectionUtils from '../../../utils/root/Bisection'
 
 import { useState } from 'react'
+import Plot from 'react-plotly.js'
 
 function Bisection() {
 
@@ -72,6 +73,19 @@ function Bisection() {
 
                 </table>
             </div>
+
+            <Plot
+                data = {[
+                    {
+                        x : result.map(r => r.x),
+                        y : result.map(r => r.y),
+                        type : 'scatter',
+                        mode : 'lines+markers',
+                        line : {color : 'red'},
+                        marker : {color : 'green'}
+                    }
+                ]}
+            />
 
         </div>
     );

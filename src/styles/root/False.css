@@ -1,0 +1,48 @@
+.F_body {
+    text-align: center;
+}
+
+.Fh1 {
+    font-size: 50px;
+}
+
+.label_f {
+    font-size: 50px;
+}
+
+.box_f {
+    width: 300px;
+    height: 60px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.label_x {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.box_x {
+    width: 60px;
+    height: 30px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.box_e {
+    height: 30px;
+    width: 110px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.button_cal {
+    height: 60px;
+    width: 100px;
+    font-size: 20px;
+}
+
+.false_table {
+    display : flex;
+    justify-content: center;
+}

@@ -36,7 +36,7 @@ function Graphical() {
             <br/><br/><br/>
 
             <label className='label'>X Start : </label>
-            <input className='xbox' id='xstart' type='number' defaultValue="-10" step="1"></input>
+            <input className='xbox' id='xstart' type='number' defaultValue="0" step="1"></input>
 
             <label className='label'> X End : </label>
             <input className='xbox' id='xend' type='number' defaultValue="10" step="1"></input>
@@ -95,8 +95,8 @@ function Graphical() {
             <Plot
                 data = {[
                     {
-                        x : result.slice(0, result.length).map( r => r.x),
-                        y : result.slice(0, result.length).map( r => r.y),
+                        x : result.map( r => r.x),
+                        y : result.map( r => r.y),
                         type : 'scatter',
                         mode : 'lines+markers',
                         marker : { color: 'green' },

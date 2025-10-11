@@ -68,7 +68,7 @@ function Home() {
 
     return(
         <div className="Home-item">
-            <h1>Numerical methods Project</h1>
+            <h1 className='Hh1'>Numerical methods Project</h1>
 
             <label className="label">Problem : </label>
             <select className="option" onChange={handleProblemChange}>

@@ -33,7 +33,7 @@ function BisectionUtils (Xstart , Xend, Error, fx) {
             fxl= fxm
         }
 
-        while (eps > Error && xm !== 0) {
+        while (eps > Error && fxm !== 0) {
             xm = ( xl + xr ) / 2
             fxm = fxc.evaluate( {x : xm} )
             
@@ -60,7 +60,7 @@ function BisectionUtils (Xstart , Xend, Error, fx) {
     }
 
     else {
-        return 404;
+        return 0;
     }
 
     return result;
