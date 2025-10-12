@@ -3,22 +3,38 @@ import BisectionUtils from '../../../utils/root/Bisection'
 
 import { useState } from 'react'
 import Plot from 'react-plotly.js'
+import axios from 'axios'
 
 function Bisection() {
 
     const [result, setResult] = useState([])
 
-    const cal = () => {
+    const cal = async () => {
 
         const fx = document.getElementById('fx').value
         const xstart = parseFloat(document.getElementById('xstart').value)
         const xend = parseFloat(document.getElementById('xend').value)
         const Error = parseFloat(document.getElementById('error').value)
 
-        const result = BisectionUtils(xstart, xend, Error, fx)
+        const resultData = BisectionUtils(xstart, xend, Error, fx)
 
         if (Array.isArray(result)) {
-            setResult(result);
+            setResult(resultData);
+
+             try {
+                await axios.post('http://localhost:3001/api/bisection/save', {
+                    fx,
+                    xStart : xstart,
+                    xEnd : xend,
+                    error : Error,
+                    result : resultData
+                })
+                console.log("✅ Saved to database")
+            } 
+            catch (err) {
+                console.error("❌ Error saving:", err)
+            }
+
         }
         else {
             alert("Cann't Solve please change.");
@@ -75,16 +91,14 @@ function Bisection() {
             </div>
 
             <Plot
-                data = {[
-                    {
-                        x : result.map(r => r.x),
-                        y : result.map(r => r.y),
-                        type : 'scatter',
-                        mode : 'lines+markers',
-                        line : {color : 'red'},
-                        marker : {color : 'green'}
-                    }
-                ]}
+                data = {[{
+                    x : result.map(r => r.x),
+                    y : result.map(r => r.y),
+                    type : 'scatter',
+                    mode : 'lines+markers',
+                    line : {color : 'red'},
+                    marker : {color : 'green'}
+                }]}
             />
 
         </div>
