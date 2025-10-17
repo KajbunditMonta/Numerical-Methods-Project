@@ -25,8 +25,8 @@ import NewtonDivided from './pages/methods/inter/NewtonDivided';
 import Lagrange from './pages/methods/inter/Lagrange';
 import Spline from './pages/methods/inter/Spline';
 
-import Simple from './pages/methods/extra/Simple';
-import Multiple from './pages/methods/extra/Multiple';
+import Simple from './pages/methods/exter/Simple';
+import Multiple from './pages/methods/exter/Multiple';
 
 import Trapezoidal from './pages/methods/integrat/Trapezoidal';
 import CompositeTrapezoidal from './pages/methods/integrat/CompositeTrapezoidal';

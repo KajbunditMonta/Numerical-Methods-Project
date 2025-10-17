@@ -41,8 +41,8 @@ function Home() {
         }
         else if (selected === "extra") {
             setSolutions([
-                {label : "Simple Regression", path : "/pages/methods/extra/Simple"}, 
-                {label : "Multiple Regression", path : "/pages/methods/extra/Multiple"}
+                {label : "Simple Regression", path : "/pages/methods/exter/Simple"}, 
+                {label : "Multiple Regression", path : "/pages/methods/exter/Multiple"}
             ]);
         }
         else if (selected === "integrat") {

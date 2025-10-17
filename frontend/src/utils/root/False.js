@@ -33,7 +33,7 @@ function FalseUtils (Xstart , Xend, Error, fx) {
             fxl = fx1
         }
 
-        while (eps > Error && x1 !== 0) {
+        while (eps > Error && x1 !== 0 && fx1 !== 0) {
             x1 = ( ( xl * fxr ) - ( xr * fxl ) ) / ( fxr - fxl )
             fx1 = fxc.evaluate( {x : x1} )
 

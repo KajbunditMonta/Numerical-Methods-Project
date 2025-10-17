@@ -1,14 +1,30 @@
 import '../../../styles/root/False.css'
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Plot from 'react-plotly.js';
 import FalseUtils from '../../../utils/root/False.js';
+import axios from 'axios';
 
 function False () {
 
     const [ result, setResult ] = useState([])
+    const [ history, setHistory] = useState([])
 
-    const cal = () => {
+    useEffect( () => {
+        const f_his = async () => {
+            try {
+                const res = await axios.get('http://localhost:3001/api/false/history')
+                setHistory(res.data)
+            }
+            catch (err) {
+                console.log("Error get history : ",err)
+            }
+        }
+
+        f_his()
+    }, [])
+
+    const cal = async () => {
         
         const fx = document.getElementById('fx').value
         const Xstart = parseFloat(document.getElementById('xstart').value)
@@ -19,6 +35,24 @@ function False () {
 
         if (Array.isArray(result)) {
             setResult(result)
+
+            try {
+                await axios.post('http://localhost:3001/api/false/save', {
+                    fx : fx,
+                    xstart : Xstart,
+                    xend : Xend,
+                    error : Error
+                })
+
+                const res = await axios.get('http://localhost:3001/api/false/history')
+                setHistory(res.data)
+                console.log("Save done")
+
+            }
+            catch (err) {
+                console.log("Save error! : ", err)
+            }
+
         }
         else {
             alert("Cann't Solve please change.")
@@ -29,6 +63,33 @@ function False () {
         <div className='F_body'>
 
             <h1 className='Fh1'>False-position methods</h1>
+
+            {Array.isArray(history) && history.length > 0 && (
+                <div className='t_his'>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>f(x)</th>
+                                <th>X start</th>
+                                <th>X end</th>
+                                <th>Error</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {history.map( (row, index) => 
+                                <tr key={index}>
+                                    <td>{row.fx}</td>
+                                    <td>{row.xstart}</td>
+                                    <td>{row.xend}</td>
+                                    <td>{row.error}</td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </table>
+                </div>
+            )}
+
             <br/>
 
             <label className='label_f'>f(x) : </label>
