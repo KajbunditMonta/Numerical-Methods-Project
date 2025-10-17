@@ -5,21 +5,28 @@ const router = express.Router();
 
 router.post('/save', async (req, res) => {
   try {
-    const data = new Bisection(req.body);
+
+    console.log("Incoming Data:", req.body)
+
+    const data = new Bisection(req.body)
     await data.save();
-    res.json({ message: 'Save Done!' });
-  } catch (err) {
-    res.status(500).json({ message: 'Error saving data', error: err.message });
+
+    console.log('Save success!')
+    res.json({ message: 'Save Done!' })
+  } 
+  
+  catch (err) {
+    res.status(500).json({ message: 'Error saving data', error: err.message })
   }
-});
+})
 
 router.get('/history', async (req, res) => {
   try {
-    const all = await Bisection.find().sort({ createdAt: -1 });
+    const all = await Bisection.find().sort({ createdAt: -1 })
     res.json(all);
   } catch (err) {
-    res.status(500).json({ message: 'Error fetching history', error: err.message });
+    res.status(500).json({ message: 'Error fetching history', error: err.message })
   }
-});
+})
 
-export default router;
+export default router

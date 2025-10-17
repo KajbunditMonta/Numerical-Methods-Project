@@ -5,7 +5,6 @@ const BisectionSchema = new mongoose.Schema({
   xStart: Number,
   xEnd: Number,
   error: Number,
-  result: Array,
   createdAt: { type: Date, default: Date.now },
 })
 

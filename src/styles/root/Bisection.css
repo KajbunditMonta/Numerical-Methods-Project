@@ -5,3 +5,12 @@
 .Bh1 {
     font-size: 50px;
 }
+
+.history_table {
+    float: right;
+    margin-right: 50px;
+}
+
+.label_history {
+    font-size: 20px;
+}
