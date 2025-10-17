@@ -1,0 +1,23 @@
+version : "28"
+services:
+  mongo :
+    image : mongo
+    container_name : mongo_db
+    ports : 
+      - "3002:3002"
+
+  backend :
+    build : "./backend"
+    container_name : "numer_backend"
+    ports : 
+      - "3001:3001"
+    depends_on : 
+      - mongo
+
+  frontend :
+    build : "./frontend"
+    container_name : "numer_frontend"
+    ports : 
+      - "3000:3000"
+    depends_on : 
+      - backend
