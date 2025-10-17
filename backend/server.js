@@ -3,6 +3,7 @@ import cors from 'cors'
 import mongoose from 'mongoose'
 
 import bisectionRoute from './routes/root/bisectionRoute.js'
+import graphicalRoute from './routes/root/grapicalRoute.js'
 
 const app = express()
 app.use(cors())
@@ -15,9 +16,10 @@ mongoose.connect(uri)
   .catch((err) => console.error('Mongo Error:', err))
 
 app.get('/', (req, res) => {
-  res.send('Backend Bisection Running!')
+  res.send('Backend Running!')
 });
 
 app.use('/api/bisection', bisectionRoute)
+app.use('/api/graphical', graphicalRoute)
 
 app.listen(3001, () => console.log('Server started on port 3001'))

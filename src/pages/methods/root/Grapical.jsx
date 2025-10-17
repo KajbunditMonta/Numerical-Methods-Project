@@ -1,14 +1,30 @@
 import '../../../styles/root/Grapical.css'
 import GrapicalUtils from '../../../utils/root/Grapical'
 
-import { useState } from 'react'
-import Plot from 'react-plotly.js';
+import { useEffect, useState } from 'react'
+import Plot from 'react-plotly.js'
+import axios from 'axios'
 
 function Graphical() {
 
-    const [result, setResult] = useState([]);
+    const [result, setResult] = useState([])
+    const [history, setHistory] = useState([])
 
-    const cal = () => {
+    useEffect(() => {
+        const first_history = async () => {
+            try {
+                const res = await axios.get('http://localhost:3001/api/graphical/history')
+                setHistory(res.data)
+            }
+            catch (err) {
+                console.log('Error get data : ', err)
+            }
+        }
+
+        first_history()
+    }, [])
+
+    const cal = async () => {
 
         const fx = document.getElementById('fx').value;
         const xstart = parseFloat(document.getElementById('xstart').value);
@@ -19,6 +35,25 @@ function Graphical() {
 
         if (Array.isArray(result)) {
             setResult(result);
+
+            try {
+
+                await axios.post('http://localhost:3001/api/graphical/save', {
+                    fx : fx,
+                    Xstart : xstart,
+                    Xend : xend,
+                    Plus_step : ps
+                })
+                
+                const res = await axios.get('http://localhost:3001/api/graphical/history')
+                setHistory(res.data)
+                console.log('Save done')
+
+            }
+            catch (err) {
+                console.log('error save : ', err)
+            } 
+
         }
         else {
             alert("Cann't Solve please change.");
@@ -29,6 +64,35 @@ function Graphical() {
     return(
         <div className='Gbody'>
             <h1 className='Gh1' >Graphical methods</h1>
+
+            { Array.isArray(history) && history.length > 0 && (
+                <div className='history_table'>
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>f(x)</th>
+                                <th>X start</th>
+                                <th>X end</th>
+                                <th>Plus step</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {history.map( (row, index) =>
+                                <tr key={index}>
+                                    <td>{row.fx}</td>
+                                    <td>{row.Xstart}</td>
+                                    <td>{row.Xend}</td>
+                                    <td>{row.Plus_step}</td>
+                                </tr>
+                            )}
+                        </tbody>
+
+                    </table>
+                </div>
+            )}
+
             <br/>
 
             <label className='labelf'> f(x) : </label>

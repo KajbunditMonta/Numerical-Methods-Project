@@ -4,8 +4,7 @@ const BisectionSchema = new mongoose.Schema({
   fx: String,
   xStart: Number,
   xEnd: Number,
-  error: Number,
-  createdAt: { type: Date, default: Date.now },
+  error: Number
 })
 
 export default mongoose.model('Bisection', BisectionSchema)

@@ -48,3 +48,8 @@
     font-size: 20px;
     padding: 20px;
 }
+
+.history_table {
+    float: right;
+    margin-right: 20px;
+}
