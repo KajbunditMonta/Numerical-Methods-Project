@@ -35,3 +35,8 @@
     display: flex;
     justify-content: center;
 }
+
+.load_table {
+    float: right;
+    margin-right: 20px;
+}

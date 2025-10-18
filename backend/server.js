@@ -5,6 +5,7 @@ import mongoose from 'mongoose'
 import bisectionRoute from './routes/root/bisectionRoute.js'
 import graphicalRoute from './routes/root/grapicalRoute.js'
 import falseRoute from './routes/root/falseRoute.js'
+import oneRoute from './routes/root/oneRoute.js'
 
 const app = express()
 app.use(cors())
@@ -23,5 +24,6 @@ app.get('/', (req, res) => {
 app.use('/api/bisection', bisectionRoute)
 app.use('/api/graphical', graphicalRoute)
 app.use('/api/false', falseRoute)
+app.use('/api/one-point', oneRoute)
 
 app.listen(3001, () => console.log('Server started on port 3001'))
