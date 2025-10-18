@@ -1,0 +1,51 @@
+.Nbody {
+    text-align: center;
+}
+
+.Nh1 {
+    font-size: 50px;
+}
+
+.fx_label {
+    font-size: 50px;
+}
+
+.xi_label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.xi_box {
+    height: 30px;
+    width: 60px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.error_label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.error_box {
+    height: 30px;
+    width: 110px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.cal_button {
+    height: 60px;
+    width: 100px;
+    font-size: 20px;
+}
+
+.result_table {
+    display: flex;
+    justify-content: center;
+}
+
+.result_graph {
+    display: flex;
+    justify-content: center;
+}

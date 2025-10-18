@@ -19,7 +19,7 @@ router.post('/save', async (req, res) => {
 router.get('/history', async (req, res) => {
 
     try {
-        const data = await OneModels.find().sort()
+        const data = await OneModels.find().sort({ createdAt: -1 })
         res.json(data)
         console.log("(One-Point) Get data done!")
     }

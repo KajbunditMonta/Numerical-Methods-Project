@@ -10,7 +10,7 @@ import Graphical from './pages/methods/root/Grapical';
 import Bisection from './pages/methods/root/Bisection';
 import False from './pages/methods/root/False';
 import One from './pages/methods/root/One';
-import NewtonRaphson from './pages/methods/root/Newton-Raphson';
+import NewtonRaphson from './pages/methods/root/Newton';
 import Secant from './pages/methods/root/Secant';
 
 import Cramer from './pages/methods/linear/Cramer';

@@ -21,8 +21,9 @@ router.post('/save', async (req, res) => {
 router.get('/history', async (req, res) => {
 
     try {
-        const data = await GraphicalModels.find().sort()
+        const data = await GraphicalModels.find().sort({ createdAt: -1 })
         res.json(data)
+        console.log("Get data done!")
     }
     catch (err) {
         console.log('error get history', err)
