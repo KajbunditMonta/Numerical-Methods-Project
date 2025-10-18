@@ -7,6 +7,7 @@ import graphicalRoute from './routes/root/grapicalRoute.js'
 import falseRoute from './routes/root/falseRoute.js'
 import oneRoute from './routes/root/oneRoute.js'
 import newtonRoute from './routes/root/newtonRoute.js'
+import secantRoute from './routes/root/secantRote.js'
 
 const app = express()
 app.use(cors())
@@ -27,5 +28,6 @@ app.use('/api/graphical', graphicalRoute)
 app.use('/api/false', falseRoute)
 app.use('/api/one-point', oneRoute)
 app.use('/api/newton-raphson',newtonRoute)
+app.use('/api/secant', secantRoute)
 
 app.listen(3001, () => console.log('Server started on port 3001'))

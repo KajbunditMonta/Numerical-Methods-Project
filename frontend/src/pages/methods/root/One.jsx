@@ -70,6 +70,7 @@ function One () {
 
             {Array.isArray(history) && history.length > 0 && (
                 <div className='load_table'>
+                    <label className='history_label'>History</label>
                     <table>
                         <thead>
                             <tr>

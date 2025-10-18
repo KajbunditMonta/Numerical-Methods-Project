@@ -65,6 +65,7 @@ function NewtonRaphson () {
 
             {Array.isArray(history) && history.length > 0 && (
                 <div className='history_table'>
+                    <label className='history_label'>History</label>
                     <table>
                         <thead>
                             <tr>

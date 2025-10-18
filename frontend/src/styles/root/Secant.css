@@ -1,0 +1,47 @@
+.secant_body {
+    text-align: center;
+}
+
+.secant_head {
+    font-size: 50px;
+}
+
+.fx_label {
+    font-size: 50px;
+}
+
+.x0_label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.x0_box {
+    height: 30px;
+    width: 60px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.x1_label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.x1_box {
+    height: 30px;
+    width: 60px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.error_label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.error_box {
+    height: 30px;
+    width: 110px;
+    font-size: 20px;
+    text-align: center;
+}

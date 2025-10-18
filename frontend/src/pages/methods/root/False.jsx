@@ -66,6 +66,7 @@ function False () {
 
             {Array.isArray(history) && history.length > 0 && (
                 <div className='t_his'>
+                    <label className='history_label'>History</label>
                     <table>
                         <thead>
                             <tr>
